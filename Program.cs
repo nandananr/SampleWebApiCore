@@ -13,8 +13,9 @@ namespace SampleWebAPICore
     {
         public static void Main(string[] args)
         {
+            // Add the below 2 lines of code for deploying to OpenShift
             var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
-            
+
             var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
 
             var host = new WebHostBuilder()
@@ -22,7 +23,6 @@ namespace SampleWebAPICore
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseUrls(url)
                 .Build();
 
             host.Run();

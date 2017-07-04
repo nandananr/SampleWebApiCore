@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>ead26545-c3af-47c6-b5a5-bbace25ed7ee</ProjectGuid>
+    <ProjectGuid>8af4e7d4-739e-4da7-ba51-7357524271f0</ProjectGuid>
     <RootNamespace>SampleWebAPICore</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
@@ -16,4 +16,24 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />
+<ItemGroup>
+    <Compile Include="**\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App"  />
+    <PackageReference Include="Microsoft.NET.SDK" />
+  </ItemGroup>
+<ItemGroup>
+    <Content Include="appsettings.json" />    
+    <Content Include="project.json" />
+  <Content Include="Properties\launchSettings.json" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup> 
+<ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs"/>
+    <Compile Include="Controllers\ValuesController.cs" />    
+  </ItemGroup>
 </Project>
